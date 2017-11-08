@@ -7,14 +7,31 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Add shoes</div>
                     <div class="panel-body">
-                    {{-- @include("errors.errors") --}}
+                    @include("errors.errors")
                         <form method="post" action="/shoes">
                             {{ csrf_field() }}
+
                             <div class="form-group">
-                                <label>Title:</label>
-                                <input name="title" type="text"  value="{{ old("title") }}" class="form-control">
+                                <label>Brand:</label>
+                                <input name="brand" type="text"  value="{{ old('brand') }}" class="form-control">
                             </div>
-                                <button type="submit" class="btn btn-primary">Publish</button>
+
+                            <div class="form-group">
+                                <label>Size:</label>
+                                <input name="size" type="text"  value="{{ old('size') }}" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Color:</label>
+                                <input name="color" type="text"  value="{{ old('color') }}" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Price:</label>
+                                <input name="price" type="text"  value="{{ old('price') }}" class="form-control">
+                            </div>
+
+                                <button type="submit" class="btn btn-primary">Add Shoes</button>
                         </form>
 
                     </div>
