@@ -8,4 +8,6 @@ Route::get('/', function () {
 
 Route::get("/shoes", "ShoesController@index");
 
+Route::get("/add", "ShoesController@add");
+
 Route::get('/home', 'HomeController@index')->name('home');

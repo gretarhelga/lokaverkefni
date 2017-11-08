@@ -11,4 +11,9 @@ class ShoesController extends Controller
     	$msg = "virkar";
     	return view("shoes.index", compact("msg"));
     }
+
+    public function add()
+    {
+    	return view("shoes.addShoes");
+    }
 }
