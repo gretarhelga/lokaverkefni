@@ -12,8 +12,9 @@ class ShoesController extends Controller
 {
     public function index()
     {
-    	$msg = "virkar";
-    	return view("shoes.index", compact("msg"));
+        $shoes = Shoe::orderBy("created_at","desc")->get();
+
+    	return view("shoes.index", compact("shoes"));
     }
 
     public function add()
