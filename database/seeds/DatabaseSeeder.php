@@ -52,6 +52,20 @@ class DatabaseSeeder extends Seeder
 	        	'color' => "Yellow",
 	        	'price' => 7000,
 	        	'user_id' => 2,
+        	],
+        	[
+	            'brand' => "Bla",
+	        	'size' => 43,
+	        	'color' => "Yellow",
+	        	'price' => 7000,
+	        	'user_id' => 2,
+        	],
+        	[
+	            'brand' => "Bla1",
+	        	'size' => 43,
+	        	'color' => "Yellow",
+	        	'price' => 7000,
+	        	'user_id' => 2,
         	]
         ]);
     }

@@ -1,26 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Shoes</div>
 
-                <div class="panel-body">
-                @foreach($shoes as $shoe)
-                    <article>
-                        <div>
-                            <h4>
-                                <a href="/threads/{{ $shoe->id }}">{{ $shoe->brand }}</a>
-                            </h4>
+    @foreach($shoes->chunk(4) as $chunk)
+        <div class="container">
+            <article>
+                <div class="row">
+                    @foreach($chunk as $shoe)
+                        <div class="col-xs-3" style="border: 1px solid black;">
+                            <div>{{ $shoe->brand }}</div>
+                            <div>{{ $shoe->color }}</div>
                         </div>
-                    </article>
-                    <hr>
-                @endforeach
+                    @endforeach
                 </div>
-            </div>
+            </article>
+            <hr>
         </div>
-    </div>
-</div>
+    @endforeach
+
 @endsection
