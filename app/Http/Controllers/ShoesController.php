@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Shoe;
+use App\User;
 use Auth;
 
 class ShoesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("auth")->only("add", "store");
+    }
+
     public function index()
     {
         $shoes = Shoe::orderBy("created_at","desc")->get();
@@ -20,6 +26,14 @@ class ShoesController extends Controller
     public function add()
     {
     	return view("shoes.addShoes");
+    }
+
+    public function show($id)
+    {
+        $shoes = Shoe::find($id);
+        $user = User::find("id");
+
+        return view("shoes.show", compact("shoes", "user"));
     }
 
     public function store(Request $request)

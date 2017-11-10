@@ -7,10 +7,12 @@
             <article>
                 <div class="row">
                     @foreach($chunk as $shoe)
+                    <a href="/shoes/{{ $shoe->id }}" style="text-decoration: none;">
                         <div class="col-xs-3" style="border: 1px solid black;">
-                            <div>{{ $shoe->brand }}</div>
+                            <div >{{ $shoe->brand }}</div>
                             <div>{{ $shoe->color }}</div>
                         </div>
+                    </a>
                     @endforeach
                 </div>
             </article>
