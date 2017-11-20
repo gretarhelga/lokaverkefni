@@ -10,10 +10,14 @@
   </div>
 
   <div class="col-xs-3" style="border: 1px solid black;">
-  	<h2>{{ $shoes->brand }}</h2>
-  	<h4>Size: {{ $shoes->size }}</h4>
-  	<h4>{{ $shoes->price }} ISK</h4>
+  	<h2>{{ $shoe->brand }}</h2>
+  	<h4>Size: {{ $shoe->size }}</h4>
+  	<h4>{{ $shoe->price }} ISK</h4>
+
+  	<h5>{{ $shoe->user->name }}</h5>
+
   </div>
+
 </div>
 
 

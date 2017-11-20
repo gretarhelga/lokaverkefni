@@ -30,10 +30,10 @@ class ShoesController extends Controller
 
     public function show($id)
     {
-        $shoes = Shoe::find($id);
-        $user = User::find("id");
+        $shoe = Shoe::find($id);
 
-        return view("shoes.show", compact("shoes", "user"));
+
+        return view("shoes.show", compact("shoe"));
     }
 
     public function store(Request $request)

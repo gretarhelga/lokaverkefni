@@ -9,15 +9,13 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function show($name)
+    public function show($id)
     {
-        $user = User::find($name);
-        $shoes = Shoe::find("id");
+        $user = User::find($id);
+
+        $shoes = Shoe::where("user_id", "=", $id)->get();
 
 
-
-
-
-        return view("shoes.user", compact("user", "shoes"));
+        return view("users.user", compact("user", "shoes"));
     } 
 }
