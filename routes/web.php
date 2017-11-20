@@ -14,4 +14,6 @@ Route::post("/shoes", "ShoesController@store");
 
 Route::get("/shoes/{id}", "ShoesController@show");
 
+Route::get("/{name}", "UsersController@show");
+
 Route::get('/home', 'HomeController@index')->name('home');
