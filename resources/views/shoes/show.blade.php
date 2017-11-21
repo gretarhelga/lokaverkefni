@@ -14,7 +14,26 @@
   	<h4>Size: {{ $shoe->size }}</h4>
   	<h4>{{ $shoe->price }} ISK</h4>
 
-  	<h5>{{ $shoe->user->name }}</h5>
+  	<a href="/user/{{ $shoe->user->id }}" style="text-decoration: none;">{{ $shoe->user->name }}</a>
+
+  	@if ($shoe->user->id === Auth::id())
+
+
+  		<form method="POST" action="/shoes">
+  			{{ csrf_field() }}
+  			{{ method_field("DELETE") }}
+
+  			<button type="submit">Delete</button>
+  			
+  		</form>
+
+
+  	@else
+
+  	@endif
+
+
+
 
   </div>
 
