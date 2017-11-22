@@ -9,6 +9,7 @@
   	<img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/chucks-153310_960_720.png" style="width: 100%;">
   </div>
 
+
   <div class="col-xs-3" style="border: 1px solid black;">
   	<h2>{{ $shoe->brand }}</h2>
   	<h4>Size: {{ $shoe->size }}</h4>
@@ -29,8 +30,24 @@
 
   	@endif
 
+  </div>
 
+</div>
 
+<div class="row">
+
+  <div class="col-xs-5 col-xs-offset-2">
+
+    @include("errors.errors")
+      <form method="post" action="/shoes/{{ $shoe->id }}">
+        {{ csrf_field() }}
+          <div class="form-group">
+            <label>Comment:</label>
+            <input name="text" type="text"  value="{{ old('text') }}" class="form-control">
+          </div>
+
+          <button type="submit">Comment</button>
+      </form>
 
   </div>
 

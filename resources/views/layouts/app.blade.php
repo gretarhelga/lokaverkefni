@@ -28,9 +28,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <!-- <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
-                    </a>
+                    </a> -->
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -39,6 +39,7 @@
                         &nbsp;
                         <li><a href="/shoes">Shoes</a></li>
                         <li><a href="/shoes/add">Add shoes</a></li>
+                        <li><a href="/user/{{ Auth::id() }}">My Shoes</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

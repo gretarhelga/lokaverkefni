@@ -19,4 +19,6 @@ Route::delete("/shoes/{id}", "ShoesController@delete");
 
 Route::get("/user/{id}", "UsersController@show");
 
+Route::post("/shoes/{id}", "CommentController@store");
+
 Route::get('/home', 'HomeController@index')->name('home');
