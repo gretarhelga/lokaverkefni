@@ -15,7 +15,7 @@ Route::post("/shoes", "ShoesController@store");
 
 Route::get("/shoes/{id}", "ShoesController@show");
 
-Route::delete("/shoes", "ShoesController@deleteShoe");
+Route::delete("/shoes/{id}", "ShoesController@delete");
 
 Route::get("/user/{id}", "UsersController@show");
 

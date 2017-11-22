@@ -64,7 +64,7 @@ class ShoesController extends Controller
 
     public function delete($id)
     {
-    	Shoe::where("id", "=", $id)->delete();
+    	Shoe::find($id)->delete();
 
     	return redirect("/shoes");
     }

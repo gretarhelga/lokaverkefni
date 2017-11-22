@@ -18,16 +18,13 @@
 
   	@if ($shoe->user->id === Auth::id())
 
-
-  		<form method="POST" action="/shoes">
+  		<form method="POST" action="/shoes/{{ $shoe->id }}">
   			{{ csrf_field() }}
   			{{ method_field("DELETE") }}
 
   			<button type="submit">Delete</button>
-  			
+        
   		</form>
-
-
   	@else
 
   	@endif
