@@ -10,7 +10,6 @@ class CommentController extends Controller
 {
     public function store(Request $request, $id)
     {
-
         $comment = new Comment;
         $comment->text = $request->text;
         $comment->user_id = Auth::id();

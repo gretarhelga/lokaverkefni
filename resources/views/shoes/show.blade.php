@@ -48,7 +48,16 @@
 
           <button type="submit">Comment</button>
       </form>
+  </div>
+</div>
 
+<div class="row">
+
+  <div class="col-xs-5 col-xs-offset-2">
+
+    @foreach($shoe->comments as $comment)
+      <p>{{ $comment->text }}</p>
+    @endforeach
   </div>
 
 </div>
