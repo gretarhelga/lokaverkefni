@@ -15,6 +15,15 @@
   	<h4>Size: {{ $shoe->size }}</h4>
   	<h4>{{ $shoe->price }} ISK</h4>
 
+    <form method="POST" action="/shoes/{{ $shoe->id }}">
+      {{ csrf_field() }}
+
+      <button type="submit">Like</button>
+    </form>
+
+
+
+
   	<a href="/user/{{ $shoe->user->id }}" style="text-decoration: none;">{{ $shoe->user->name }}</a>
 
   	@if ($shoe->user->id === Auth::id())

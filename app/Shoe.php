@@ -14,4 +14,8 @@ class Shoe extends Model
     {
     	return $this->hasMany(Comment::class)->latest();
     }
+    public function likes()
+    {
+    	return $this->belongsToMany(User:class);
+    }
 }
