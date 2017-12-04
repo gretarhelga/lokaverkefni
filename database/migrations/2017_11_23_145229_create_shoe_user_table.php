@@ -14,9 +14,9 @@ class CreateShoeUserTable extends Migration
     public function up()
     {
         Schema::create('shoe_user', function (Blueprint $table) {
-            $table->increments('id');
             $table->unsignedInteger('shoe_id');
             $table->unsignedInteger('user_id');
+            $table->primary(["shoe_id", "user_id"]);
             $table->foreign('shoe_id')->references("id")->on("users");
             $table->foreign('user_id')->references("id")->on("shoes");
             $table->timestamps();
