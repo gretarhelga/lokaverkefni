@@ -20,7 +20,7 @@
 
       <button type="submit">Like</button>
     </form>
-
+    <p>{{ $shoe->likes()->count() }}</p>
 
 
 
