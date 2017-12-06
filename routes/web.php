@@ -21,6 +21,6 @@ Route::get("/user/{id}", "UsersController@show");
 
 Route::post("/shoes/{id}", "CommentController@store");
 
-Route::post("/shoes/{id}", "LikeController@store");
+/*Route::post("/shoes/{id}", "LikeController@store");*/
 
 Route::get('/home', 'HomeController@index')->name('home');
