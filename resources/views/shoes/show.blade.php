@@ -16,20 +16,21 @@
   	<h4>Size: {{ $shoe->size }}</h4>
   	<h4>{{ $shoe->price }} ISK</h4>
 
-<!--     <form method="POST" action="/shoes/{{ $shoe->id }}">
+    <form method="POST" action="/shoes/{{ $shoe->id }}/like">
       {{ csrf_field() }}
 
-      <button type="submit" class="btn btn-primary">Like</button>
+      <button type="submit" class="btn btn-primary">
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+      </button>
     </form>
     <p>{{ $shoe->likes()->count() }} likes</p>
- -->
+
     @if ($shoe->user->id === Auth::id())
 
       <form method="POST" action="/shoes/{{ $shoe->id }}">
         {{ csrf_field() }}
         {{ method_field("DELETE") }}
 
-        <br>
         <button type="submit" class="btn btn-primary">Delete</button>
         
       </form>
@@ -45,23 +46,37 @@
 
 </div>
 
-<div class="row">
+<div class="commentid">
+  <div class="row">
 
-  <div class="col-xs-5 col-xs-offset-2">
+    <div class="col-xs-5 col-xs-offset-2">
 
-    @include("errors.errors")
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <form method="post" action="/shoes/{{ $shoe->id }}">
-          {{ csrf_field() }}
-            <div class="form-group">
-              <label>Comment:</label>
-              <input name="text" type="text"  value="{{ old('text') }}" class="form-control">
+      @include("errors.errors")
+          <form method="post" action="/shoes/{{ $shoe->id }}" role="form">
+            {{ csrf_field() }}
+            <div class="row">
+              <div class="col-xs-8">
+                 <div class="form-group">
+
+                <input type="text"  value="{{ old('text') }}" class="form-control" placeholder="Your comment">
+
+              </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="form-group">
+
+                <button type="submit" class="btn btn-primary">Comment</button>
+
+              </div>
+              </div>
             </div>
+         
 
-            <button type="submit" class="btn btn-primary">Comment</button>
-        </form>
-      </div>
+              
+
+          </form>
+          <hr>
+
     </div>
   </div>
 </div>
@@ -71,7 +86,13 @@
   <div class="col-xs-5 col-xs-offset-2">
 
     @foreach($shoe->comments as $comment)
+
+
+      <p><a href="/user/{{ $comment->user->id }}" style="text-decoration: none;">{{ $comment->user->name }}</a>  {{ $comment->created_at->diffForHumans() }}</p>
       <p>{{ $comment->text }}</p>
+
+      <hr>
+
     @endforeach
   </div>
 
