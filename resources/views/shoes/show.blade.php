@@ -52,13 +52,13 @@
     <div class="col-xs-5 col-xs-offset-2">
 
       @include("errors.errors")
-          <form method="post" action="/shoes/{{ $shoe->id }}" role="form">
+          <form method="POST" action="/shoes/{{ $shoe->id }}" role="form">
             {{ csrf_field() }}
             <div class="row">
               <div class="col-xs-8">
                  <div class="form-group">
 
-                <input type="text"  value="{{ old('text') }}" class="form-control" placeholder="Your comment">
+                <input type="text" name="text"  value="{{ old('text') }}" class="form-control" placeholder="Your comment">
 
               </div>
               </div>

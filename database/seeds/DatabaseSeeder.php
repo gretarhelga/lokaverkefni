@@ -26,14 +26,14 @@ class DatabaseSeeder extends Seeder
 
         DB::table('shoes')->insert([
         	[
-	            'brand' => "nike",
+	            'brand' => "Nike",
 	        	'size' => 42,
 	        	'color' => "White",
 	        	'price' => 5000,
 	        	'user_id' => 1,
         	],
         	[
-	            'brand' => "gucci",
+	            'brand' => "Gucci",
 	        	'size' => 40,
 	        	'color' => "Green",
 	        	'price' => 6000,
@@ -54,17 +54,17 @@ class DatabaseSeeder extends Seeder
 	        	'user_id' => 2,
         	],
         	[
-	            'brand' => "Bla",
-	        	'size' => 43,
-	        	'color' => "Yellow",
+	            'brand' => "Nike",
+	        	'size' => 42,
+	        	'color' => "Red",
 	        	'price' => 7000,
 	        	'user_id' => 2,
         	],
         	[
-	            'brand' => "Bla1",
+	            'brand' => "Vans",
 	        	'size' => 43,
-	        	'color' => "Yellow",
-	        	'price' => 7000,
+	        	'color' => "Black",
+	        	'price' => 10000,
 	        	'user_id' => 2,
         	]
         ]);
